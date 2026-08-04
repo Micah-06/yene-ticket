@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { supabase } from '@/lib/supabase';
+import { supabase } from '@supabase/lib/supabase';
 import { CheckCircle, Download, ArrowLeft, Ticket } from 'lucide-react';
 
 export default function SuccessPage() {
