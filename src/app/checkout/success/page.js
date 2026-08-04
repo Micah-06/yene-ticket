@@ -53,4 +53,30 @@ export default function SuccessPage() {
       </div>
     </div>
   );
+}'use client';
+
+import { Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
+
+// 1. Move your main logic into a inner component
+function CheckoutContent() {
+  const searchParams = useSearchParams();
+  const eventId = searchParams.get('eventId');
+  const ticketTypeId = searchParams.get('ticketTypeId');
+
+  return (
+    <div>
+      <h1>Checkout for Event {eventId}</h1>
+      <p>Ticket ID: {ticketTypeId}</p>
+    </div>
+  );
+}
+
+// 2. Export the main page wrapped in Suspense
+export default function CheckoutPage() {
+  return (
+    <Suspense fallback={<div className="p-10 text-center font-bold">Loading checkout...</div>}>
+      <CheckoutContent />
+    </Suspense>
+  );
 }
