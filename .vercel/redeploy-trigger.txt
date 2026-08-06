@@ -1,0 +1,5 @@
+Redeploy trigger file
+
+This file was created to trigger a fresh Vercel deployment (clears cache).
+
+Triggered by GitHub Copilot on 2026-08-06 to start a clean build.
